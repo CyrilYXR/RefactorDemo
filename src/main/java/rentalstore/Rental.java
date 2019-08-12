@@ -16,4 +16,15 @@ public class Rental {
     public int getDayRented() {
         return dayRented;
     }
+
+    double getThisAmount() {
+        return getMovie().getAmount(dayRented);
+    }
+
+    int getFrequentRenterPoints() {
+        if (movie.getClass() == NewReleaseMovie.class && getDayRented() > 1) {
+            return 2;
+        }
+        return 1;
+    }
 }
